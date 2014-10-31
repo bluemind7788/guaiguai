@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gg1_0"
+    package="com.bm.gg"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.gg1_0.MainActivity"
+            android:name="com.bm.gg.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,25 +23,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:enabled="true" android:name=".SoundService">
+        <service android:enabled="true" android:name="com.bm.gg.SoundService">
                     <intent-filter android:priority = "1000"> 
-                <action android:name="com.example.gg1_0.SoundService" />
+                <action android:name="com.bm.gg.SoundService" />
                 <category android:name="android.intent.category.default" /> 
         </intent-filter> 
 		</service>  
-		<service android:enabled="true" android:name=".RecogService">
+		<service android:enabled="true" android:name="com.bm.gg.RecogService">
                     <intent-filter> 
-                <action android:name="com.example.gg1_0.RecogService" /> 
+                <action android:name="com.bm.gg.RecogService" /> 
                 <category android:name="android.intent.category.default" /> 
         </intent-filter> 
 		</service>
-		<receiver android:name=".BootBroadcastReceiver">
+		<receiver android:name="com.bm.gg.BootBroadcastReceiver">
 	        <intent-filter>
 	        <action android:name="android.intent.action.BOOT_COMPLETED" />
 	        <category android:name="android.intent.category.HOME" />
 	        </intent-filter>
     	</receiver>
-    	<receiver android:name=".AppReceiver">
+    	<receiver android:name="com.bm.gg.AppReceiver">
            <intent-filter>
               <action android:name="android.intent.action.PACKAGE_ADDED" />
               <data android:scheme="package" />
