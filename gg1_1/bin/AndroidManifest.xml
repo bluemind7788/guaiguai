@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bm.gg"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1.1" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -23,25 +23,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:enabled="true" android:name="com.bm.gg.SoundService">
+        <service android:enabled="true" android:name="com.bm.gg.service.SoundService">
                     <intent-filter android:priority = "1000"> 
-                <action android:name="com.bm.gg.SoundService" />
+                <action android:name="com.bm.gg.service.SoundService" />
                 <category android:name="android.intent.category.default" /> 
         </intent-filter> 
 		</service>  
-		<service android:enabled="true" android:name="com.bm.gg.RecogService">
+		<service android:enabled="true" android:name="com.bm.gg.service.RecogService">
                     <intent-filter> 
-                <action android:name="com.bm.gg.RecogService" /> 
+                <action android:name="com.bm.gg.service.RecogService" /> 
                 <category android:name="android.intent.category.default" /> 
         </intent-filter> 
 		</service>
-		<receiver android:name="com.bm.gg.BootBroadcastReceiver">
+		<receiver android:name="com.bm.gg.reciever.BootBroadcastReceiver">
 	        <intent-filter>
 	        <action android:name="android.intent.action.BOOT_COMPLETED" />
 	        <category android:name="android.intent.category.HOME" />
 	        </intent-filter>
     	</receiver>
-    	<receiver android:name="com.bm.gg.AppReceiver">
+    	<receiver android:name="com.bm.gg.reciever.AppReceiver">
            <intent-filter>
               <action android:name="android.intent.action.PACKAGE_ADDED" />
               <data android:scheme="package" />

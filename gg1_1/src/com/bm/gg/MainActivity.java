@@ -28,8 +28,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bm.constant.GGConstant;
 import com.bm.gg.R;
+import com.bm.gg.constant.GGConstant;
+import com.bm.gg.util.ApkInstaller;
 import com.iflytek.speech.SpeechUtility;
 
 public class MainActivity extends Activity implements OnClickListener {
