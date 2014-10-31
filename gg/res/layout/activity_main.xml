@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/isr_build_grammar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="28dp"
+        android:text="构建语法"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/isr_recognize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/isr_build_grammar"
+        android:layout_below="@+id/isr_build_grammar"
+        android:layout_marginTop="47dp"
+        android:text="开始识别"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/isr_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/isr_text"
+        android:layout_centerVertical="true"
+        android:text="停止录音"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/isr_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/isr_stop"
+        android:text="取消"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/music_stop"
+        android:layout_alignBottom="@+id/music_stop"
+        android:layout_alignLeft="@+id/isr_cancel"
+        android:text="btnPlay"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/music_stop"
+        android:layout_alignParentTop="true"
+        android:text="可识别的话语：\n  手机你在哪 或  \n  你在哪 或\n  手机手机"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/statusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/isr_stop"
+        android:layout_alignLeft="@+id/tips"
+        android:layout_marginBottom="16dp"
+        android:text="当前状态："
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/statusLabel"
+        android:layout_below="@+id/statusLabel"
+        android:layout_marginLeft="18dp"
+        android:text="初始中..."
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/music_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/isr_stop"
+        android:layout_below="@+id/isr_stop"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="26dp"
+        android:text="停止铃声" />
+
+</RelativeLayout>
