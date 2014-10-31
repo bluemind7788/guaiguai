@@ -12,17 +12,18 @@ public class ServiceUtil {
 		boolean isServiceRunning = false;
 		for (RunningServiceInfo service : manager
 				.getRunningServices(Integer.MAX_VALUE)) {
-			if ("com.example.gg1_0.RecogService"
-					.equals(service.service.getClassName()))
+			if ("com.example.gg1_0.RecogService".equals(service.service
+					.getClassName()))
 
 			{
 				isServiceRunning = true;
 			}
 			if (!isServiceRunning) {
-				Intent recogIntent = new Intent("com.example.gg1_0.RecogService");
-	            context.startService(recogIntent);
+				Intent recogIntent = new Intent(
+						"com.example.gg1_0.RecogService");
+				context.startService(recogIntent);
 			}
 		}
-		
+
 	}
 }

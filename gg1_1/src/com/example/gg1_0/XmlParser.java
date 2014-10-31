@@ -11,44 +11,45 @@ import org.w3c.dom.Element;
 
 public class XmlParser {
 
-	public static String parseNluResult(String xml) 
-	{
+	public static String parseNluResult(String xml) {
 		StringBuffer buffer = new StringBuffer();
-		try
-		{
+		try {
 			// DOM builder
 			DocumentBuilder domBuilder = null;
 			// DOM doc
-			Document domDoc = null;	
+			Document domDoc = null;
 
 			// init DOM
-			DocumentBuilderFactory domFact = DocumentBuilderFactory.newInstance();
+			DocumentBuilderFactory domFact = DocumentBuilderFactory
+					.newInstance();
 			domBuilder = domFact.newDocumentBuilder();
 			InputStream is = new ByteArrayInputStream(xml.getBytes());
 			domDoc = domBuilder.parse(is);
 
 			// 获取根节点
 			Element root = (Element) domDoc.getDocumentElement();
-			
-			Element raw = (Element)root.getElementsByTagName("rawtext").item(0);
+
+			Element raw = (Element) root.getElementsByTagName("rawtext")
+					.item(0);
 			buffer.append("【识别结果】" + raw.getFirstChild().getNodeValue());
 			buffer.append("\n");
-			
-			Element e = (Element)root.getElementsByTagName("result").item(0);
-			
-			Element focus = (Element)e.getElementsByTagName("focus").item(0);
+
+			Element e = (Element) root.getElementsByTagName("result").item(0);
+
+			Element focus = (Element) e.getElementsByTagName("focus").item(0);
 			buffer.append("【FOCUS】" + focus.getFirstChild().getNodeValue());
 			buffer.append("\n");
-			
-			Element action = (Element)e.getElementsByTagName("action").item(0);
-			Element operation = (Element)action.getElementsByTagName("operation").item(0);
+
+			Element action = (Element) e.getElementsByTagName("action").item(0);
+			Element operation = (Element) action.getElementsByTagName(
+					"operation").item(0);
 			buffer.append("【ACTION】" + operation.getFirstChild().getNodeValue());
 			buffer.append("\n");
-			
 
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
-		};
+		}
+		;
 		buffer.append("\n");
 		buffer.append("【ALL】" + xml);
 		return buffer.toString();

@@ -12,7 +12,6 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.widget.Toast;
 
-
 /**
  * 两种方式安装服务组件
  * 
@@ -31,28 +30,31 @@ public class ApkInstaller {
 			InputStream stream;
 			stream = assets.open(assetsApk);
 			if (stream == null) {
-				Toast.makeText(context, "assets no apk", Toast.LENGTH_SHORT).show();
+				Toast.makeText(context, "assets no apk", Toast.LENGTH_SHORT)
+						.show();
 				return false;
 			}
-			
+
 			String folder = "/mnt/sdcard/Android/data";
 			File f = new File(folder);
 			if (!f.exists()) {
 				f.mkdir();
 			}
-			
+
 			String apkPath = "/mnt/sdcard/Android/data/SpeechService.apk";
 			File file = new File(apkPath);
-			//往SDcard中写文件，需加权限
-			//<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			// 往SDcard中写文件，需加权限
+			// <uses-permission
+			// android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 			if (!writeStreamToFile(stream, file)) {
 				return false;
 			}
-			//安装apk文件，需加权限
-			//<uses-permission android:name="android.permission.INSTALL_PACKAGES" />  
+			// 安装apk文件，需加权限
+			// <uses-permission
+			// android:name="android.permission.INSTALL_PACKAGES" />
 			installApk(context, apkPath);
 		} catch (IOException e) {
-			e.printStackTrace();			
+			e.printStackTrace();
 			return false;
 		}
 		return true;

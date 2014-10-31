@@ -14,15 +14,14 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 		boolean isServiceRunning = false;
 		if (intent.getAction().equals(Intent.ACTION_TIME_TICK)) {
 
-			
 			// ¼ì²éService×´Ì¬
 
 			ActivityManager manager = (ActivityManager) context
 					.getSystemService(Context.ACTIVITY_SERVICE);
 			for (RunningServiceInfo service : manager
 					.getRunningServices(Integer.MAX_VALUE)) {
-				if ("com.example.gg1_0.RecogService"
-						.equals(service.service.getClassName()))
+				if ("com.example.gg1_0.RecogService".equals(service.service
+						.getClassName()))
 
 				{
 					isServiceRunning = true;
@@ -30,12 +29,14 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
 
 			}
 			if (!isServiceRunning) {
-				Intent recogIntent = new Intent("com.example.gg1_0.RecogService");
-	            context.startService(recogIntent);
-	            
-//				Intent soundIntent = new Intent("com.example.gg1_0.SoundService");
-//	        	soundIntent.putExtra("playing", true);
-//	            context.startService(soundIntent);
+				Intent recogIntent = new Intent(
+						"com.example.gg1_0.RecogService");
+				context.startService(recogIntent);
+
+				// Intent soundIntent = new
+				// Intent("com.example.gg1_0.SoundService");
+				// soundIntent.putExtra("playing", true);
+				// context.startService(soundIntent);
 			}
 
 		}
