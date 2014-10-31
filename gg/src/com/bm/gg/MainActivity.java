@@ -35,16 +35,15 @@ import com.iflytek.speech.SpeechUtility;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	Intent soundIntent = new Intent(GGConstant.INTENT_SOUND_SERVICE);
-	Intent recogIntent = new Intent(GGConstant.INTENT_RECOG_SERVICE);
+	private Intent soundIntent = new Intent(GGConstant.INTENT_SOUND_SERVICE);
+	private Intent recogIntent = new Intent(GGConstant.INTENT_RECOG_SERVICE);
 
-	DataReceiver dataReceiver;// BroadcastReceiver对象
-	TextView statusTV;// TextView对象应用
+	private DataReceiver dataReceiver;// BroadcastReceiver对象
+	private TextView statusTV;// TextView对象应用
 
 	private Handler mHandler;
 	private Dialog mLoadDialog;
-
-	Button btnStop;
+	private Button btnStop;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
