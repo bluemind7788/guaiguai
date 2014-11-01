@@ -1,8 +1,6 @@
 ﻿#BNF+IAT 1.0 UTF-8;
 !grammar call;
-!slot <want>;
 !slot <dialcmd>;
 !start <callstart>;
-<callstart>:[<want>]<dialcmd>;
-<want>:手机;
-<dialcmd>:你在哪里|你在哪|手机手机;
+<callstart>:<dialcmd>;
+<dialcmd>:手机你在哪|手机手机;

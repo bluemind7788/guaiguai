@@ -274,7 +274,7 @@ public class RecogService extends Service {
 			// handler.sendMessage(message);
 			synchronized (RecogService.class) {
 				curVolumn = -3;
-				handler.sendMessageDelayed(new Message(), 100);
+				handler.sendMessageDelayed(new Message(), 0);
 			}
 		}
 

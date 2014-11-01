@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/music_stop"
         android:layout_alignParentTop="true"
-        android:text="可识别的话语：\n  手机你在哪 或  \n  你在哪 或\n  手机手机"
+        android:text="可识别的话语：\n  手机你在哪 或   \n  手机手机"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
